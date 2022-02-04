@@ -632,10 +632,12 @@ void RmapTraining<SamplingSpaceType>::publishSlicedCloud() const
         }
       }
 
+    auto point_msg = OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample));
+    point_msg.z = 10;
     if (reachability_list_[i]) {
-      reachable_cloud_msg.points.push_back(OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample)));
+      reachable_cloud_msg.points.push_back(point_msg);
     } else {
-      unreachable_cloud_msg.points.push_back(OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample)));
+      unreachable_cloud_msg.points.push_back(point_msg);
     }
   }
   sliced_reachable_cloud_pub_.publish(reachable_cloud_msg);
@@ -666,7 +668,7 @@ void RmapTraining<SamplingSpaceType>::publishMarkerArray() const
   xy_plane_marker.ns = "xy_plane";
   xy_plane_marker.id = marker_arr_msg.markers.size();
   xy_plane_marker.type = visualization_msgs::Marker::CUBE;
-  xy_plane_marker.color = OmgCore::toColorRGBAMsg({0.8, 0.8, 0.8, 1.0});
+  xy_plane_marker.color = OmgCore::toColorRGBAMsg({1.0, 1.0, 1.0, 1.0});
   xy_plane_marker.scale.x = 100.0;
   xy_plane_marker.scale.y = 100.0;
   xy_plane_marker.scale.z = plane_thickness;
