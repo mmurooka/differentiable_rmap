@@ -99,6 +99,7 @@ bool RmapSamplingFootstep<SamplingSpaceType>::sampleOnce(int sample_idx)
 
   bool reachability = true;
 
+  visualization_rbc_arr_.clear();
   for (int i = 0; i < 3; i++) {
     const auto& rb = rb_arr_[0];
     const auto& rbc = rbc_arr_[0];
@@ -131,6 +132,9 @@ bool RmapSamplingFootstep<SamplingSpaceType>::sampleOnce(int sample_idx)
     // Solve IK
     problem_->run(config_.ik_loop_num);
 
+    visualization_rbc_arr_.push_back(std::shared_ptr<rbd::MultiBodyConfig>(
+        new rbd::MultiBodyConfig(*rbc_arr_[0])));
+
     // Check task error
     for (auto& taskset : taskset_list_) {
       taskset.update(rb_arr_, rbc_arr_, aux_rb_arr_);
@@ -148,13 +152,50 @@ bool RmapSamplingFootstep<SamplingSpaceType>::sampleOnce(int sample_idx)
   const SampleType& sample = poseToSample<SamplingSpaceType>(swing_foot_body_task_->target());
   sample_list_[sample_idx] = sample;
   reachability_list_[sample_idx] = reachability;
+  auto point_msg = OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample));
+  point_msg.z = -0.1;
   if (reachability) {
-    reachable_cloud_msg_.points.push_back(OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample)));
+    reachable_cloud_msg_.points.push_back(point_msg);
   } else {
-    unreachable_cloud_msg_.points.push_back(OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample)));
+    unreachable_cloud_msg_.points.push_back(point_msg);
   }
 
   return true;
+}
+
+template <SamplingSpace SamplingSpaceType>
+void RmapSamplingFootstep<SamplingSpaceType>::publish()
+{
+  if (visualization_rbc_arr_.size() < 3) {
+    return;
+  }
+
+  // Publish robot
+  optmotiongen_msgs::RobotStateArray robot_state_arr_msg;
+  for (const auto& visualization_rbc : visualization_rbc_arr_) {
+    robot_state_arr_msg.robot_states.push_back(rb_arr_[0]->makeRobotStateMsg(visualization_rbc));
+  }
+  rs_arr_pub_.publish(robot_state_arr_msg);
+
+  // Publish cloud
+  {
+    const auto& time_now = ros::Time::now();
+    reachable_cloud_msg_.header.frame_id = "world";
+    reachable_cloud_msg_.header.stamp = time_now;
+    reachable_cloud_pub_.publish(reachable_cloud_msg_);
+    unreachable_cloud_msg_.header.frame_id = "world";
+    unreachable_cloud_msg_.header.stamp = time_now;
+    unreachable_cloud_pub_.publish(unreachable_cloud_msg_);
+  }
+
+  // Publish collision marker
+  std::vector<std::shared_ptr<OmgCore::CollisionTask>> collision_task_list = collision_task_list_;
+  for (const auto& task : additional_task_list_) {
+    if (auto collision_task = std::dynamic_pointer_cast<OmgCore::CollisionTask>(task)) {
+      collision_task_list.push_back(collision_task);
+    }
+  }
+  this->publishCollisionMarker(collision_task_list);
 }
 
 std::shared_ptr<RmapSamplingBase> DiffRmap::createRmapSamplingFootstep(

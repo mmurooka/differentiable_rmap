@@ -4,8 +4,12 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /RobotStateArray1/Robots1
-        - /RobotStateArray1/Robots1/Robot_0001/Links1
+        - /RobotStateArray1/Robots1/Robot_0001
+        - /RobotStateArray1/Robots1/Robot_0011
+        - /RobotStateArray1/Robots1/Robot_0021
+        - /RobotStateArray1/Robot Color Style1
+        - /RobotStateArray1/Robot Color Style1/First Color1
+        - /RobotStateArray1/Robot Color Style1/Last Color1
         - /ReachableCloud1/Autocompute Value Bounds1
       Splitter Ratio: 0.6277258396148682
     Tree Height: 725
@@ -39,7 +43,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -52,22 +56,22 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Check name consistency: false
       Class: optmotiongen_rviz_plugins/RobotStateArray
       Enabled: true
       Max Robot Num: 5
       Name: RobotStateArray
       Robot Color Style:
-        Color:
+        First Color:
           Alpha: 1
-          Color: 0; 255; 0
-          Original Color: true
-        Color1:
+          Color: 52; 101; 164
+          Original Color: false
+        Last Color:
           Alpha: 1
-          Color: 150; 50; 150
-          Original Color: true
-        Value: Uniform
+          Color: 239; 41; 41
+          Original Color: false
+        Value: Gradation
       Robot Description: robot_description
       Robot State Array Topic: robot_state_arr
       Robots:
@@ -407,7 +411,7 @@ Visualization Manager:
           Value: true
         Robot_001:
           Links:
-            All Links Enabled: true
+            All Links Enabled: false
             Body:
               Alpha: 1
               Show Axes: false
@@ -422,12 +426,12 @@ Visualization Manager:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Chest_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Expand Joint Details: false
             Expand Link Details: false
             Expand Tree: false
@@ -435,67 +439,67 @@ Visualization Manager:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Head_Link1_Plan2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lhand_Link0_Plan2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lindex_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lindex_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lindex_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Link Tree Style: Links in Alphabetic Order
             Lleg_Link0:
               Alpha: 1
@@ -531,92 +535,92 @@ Visualization Manager:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lmiddle_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lmiddle_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lscap_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lthumb_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lthumb_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lthumb_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rhand_Link0_Plan2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rindex_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rindex_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rindex_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rleg_Link0:
               Alpha: 1
               Show Axes: false
@@ -651,37 +655,37 @@ Visualization Manager:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rmiddle_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rmiddle_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rscap_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rthumb_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rthumb_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rthumb_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             azure_depth_frame:
               Alpha: 1
               Show Axes: false
@@ -741,7 +745,7 @@ Visualization Manager:
           Value: true
         Robot_002:
           Links:
-            All Links Enabled: true
+            All Links Enabled: false
             Body:
               Alpha: 1
               Show Axes: false
@@ -756,12 +760,12 @@ Visualization Manager:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Chest_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Expand Joint Details: false
             Expand Link Details: false
             Expand Tree: false
@@ -769,67 +773,67 @@ Visualization Manager:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Head_Link1_Plan2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Larm_Link6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lhand_Link0_Plan2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lindex_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lindex_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lindex_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Link Tree Style: Links in Alphabetic Order
             Lleg_Link0:
               Alpha: 1
@@ -865,92 +869,92 @@ Visualization Manager:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lmiddle_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lmiddle_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lscap_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lthumb_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lthumb_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Lthumb_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rarm_Link6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rhand_Link0_Plan2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rindex_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rindex_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rindex_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rleg_Link0:
               Alpha: 1
               Show Axes: false
@@ -985,37 +989,37 @@ Visualization Manager:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rmiddle_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rmiddle_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rscap_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rthumb_Link0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rthumb_Link1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             Rthumb_Link2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-              Value: true
+              Value: false
             azure_depth_frame:
               Alpha: 1
               Show Axes: false
@@ -1764,7 +1768,7 @@ Visualization Manager:
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.019999999552965164
-      Style: Boxes
+      Style: Spheres
       Topic: /reachable_cloud
       Unreliable: false
       Use Fixed Frame: true
@@ -1791,8 +1795,8 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.019999999552965164
-      Style: Boxes
+      Size (m): 0.009999999776482582
+      Style: Spheres
       Topic: /unreachable_cloud
       Unreliable: false
       Use Fixed Frame: true
@@ -1835,25 +1839,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.3152272701263428
+      Distance: 2.497692346572876
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.06443876773118973
-        Y: 0.2885998785495758
-        Z: 0.409577876329422
+        X: -0.06085386872291565
+        Y: 0.5092682838439941
+        Z: 0.30574512481689453
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5070840716362
+      Pitch: 0.407084584236145
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.950006484985352
+      Yaw: 0.23681345582008362
     Saved: ~
 Window Geometry:
   Displays:

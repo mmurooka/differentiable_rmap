@@ -1,5 +1,5 @@
 # Interval of loop counts to publish ROS message
-publish_loop_interval: 10
+publish_loop_interval: 1
 
 # Number of IK loop
 ik_loop_num: 100

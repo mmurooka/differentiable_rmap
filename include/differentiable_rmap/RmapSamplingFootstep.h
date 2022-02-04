@@ -87,6 +87,9 @@ class RmapSamplingFootstep: public RmapSamplingIK<SamplingSpaceType>
   */
   virtual bool sampleOnce(int sample_idx) override;
 
+  /** \brief Publish ROS message. */
+  virtual void publish() override;
+
  protected:
   //! Configuration
   Configuration config_;
@@ -109,6 +112,9 @@ class RmapSamplingFootstep: public RmapSamplingIK<SamplingSpaceType>
   //! Footstep position offset to make sample from [-1:1] random value
   FootstepPos footstep_pos_offset_;
 
+  //! Robot configuration array for visualization
+  OmgCore::RobotConfigArray visualization_rbc_arr_;
+
  protected:
   // See https://stackoverflow.com/a/6592617
   using RmapSamplingIK<SamplingSpaceType>::rb_arr_;
@@ -127,6 +133,10 @@ class RmapSamplingFootstep: public RmapSamplingIK<SamplingSpaceType>
   using RmapSamplingIK<SamplingSpaceType>::reachability_list_;
 
   using RmapSamplingIK<SamplingSpaceType>::nh_;
+
+  using RmapSamplingIK<SamplingSpaceType>::rs_arr_pub_;
+  using RmapSamplingIK<SamplingSpaceType>::reachable_cloud_pub_;
+  using RmapSamplingIK<SamplingSpaceType>::unreachable_cloud_pub_;
 
   using RmapSamplingIK<SamplingSpaceType>::reachable_cloud_msg_;
   using RmapSamplingIK<SamplingSpaceType>::unreachable_cloud_msg_;
