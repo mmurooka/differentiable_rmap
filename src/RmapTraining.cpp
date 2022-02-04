@@ -7,6 +7,7 @@
 
 #include <sensor_msgs/PointCloud.h>
 #include <visualization_msgs/MarkerArray.h>
+#include <jsk_recognition_msgs/PolygonArray.h>
 #include <differentiable_rmap/RmapSampleSet.h>
 
 #include <optmotiongen/Utils/RosUtils.h>
@@ -35,6 +36,8 @@ RmapTraining<SamplingSpaceType>::RmapTraining(const std::string& bag_path,
   sliced_unreachable_cloud_pub_ = nh_.advertise<sensor_msgs::PointCloud>("unreachable_cloud_sliced", 1, true);
   marker_arr_pub_ = nh_.advertise<visualization_msgs::MarkerArray>("marker_arr", 1, true);
   grid_map_pub_ = nh_.advertise<grid_map_msgs::GridMap>("grid_map", 1, true);
+  left_poly_arr_pub_ = nh_.advertise<jsk_recognition_msgs::PolygonArray>("left_poly_arr", 1, true);
+  right_poly_arr_pub_ = nh_.advertise<jsk_recognition_msgs::PolygonArray>("right_poly_arr", 1, true);
   eval_srv_ = nh_.advertiseService(
       "evaluate",
       &RmapTraining<SamplingSpaceType>::evaluateCallback,
@@ -632,14 +635,39 @@ void RmapTraining<SamplingSpaceType>::publishSlicedCloud() const
         }
       }
 
+    auto point_msg = OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample));
+    point_msg.z = 10.0;
     if (reachability_list_[i]) {
-      reachable_cloud_msg.points.push_back(OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample)));
+      reachable_cloud_msg.points.push_back(point_msg);
     } else {
-      unreachable_cloud_msg.points.push_back(OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample)));
+      unreachable_cloud_msg.points.push_back(point_msg);
     }
   }
   sliced_reachable_cloud_pub_.publish(reachable_cloud_msg);
   sliced_unreachable_cloud_pub_.publish(unreachable_cloud_msg);
+
+  {
+    jsk_recognition_msgs::PolygonArray left_poly_arr_msg;
+    jsk_recognition_msgs::PolygonArray right_poly_arr_msg;
+    left_poly_arr_msg.header = header_msg;
+    left_poly_arr_msg.polygons.resize(1);
+    left_poly_arr_msg.polygons[0].header = header_msg;
+    left_poly_arr_msg.polygons[0].polygon.points.resize(config_.foot_vertices.size());
+    right_poly_arr_msg.header = header_msg;
+    right_poly_arr_msg.polygons.resize(1);
+    right_poly_arr_msg.polygons[0].header = header_msg;
+    right_poly_arr_msg.polygons[0].polygon.points.resize(config_.foot_vertices.size());
+    double origin_theta = calcYawAngle(slice_origin_.rotation().transpose());
+    for (size_t j = 0; j < config_.foot_vertices.size(); j++) {
+      left_poly_arr_msg.polygons[0].polygon.points[j] =
+          OmgCore::toPoint32Msg(sva::RotZ(origin_theta).transpose() * config_.foot_vertices[j] + Eigen::Vector3d(0, 0.3, 0));
+      left_poly_arr_msg.polygons[0].polygon.points[j].z = 20.0;
+      right_poly_arr_msg.polygons[0].polygon.points[j] = OmgCore::toPoint32Msg(config_.foot_vertices[j]);
+      right_poly_arr_msg.polygons[0].polygon.points[j].z = 20.0;
+    }
+    left_poly_arr_pub_.publish(left_poly_arr_msg);
+    right_poly_arr_pub_.publish(right_poly_arr_msg);
+  }
 }
 
 template <SamplingSpace SamplingSpaceType>
@@ -666,7 +694,7 @@ void RmapTraining<SamplingSpaceType>::publishMarkerArray() const
   xy_plane_marker.ns = "xy_plane";
   xy_plane_marker.id = marker_arr_msg.markers.size();
   xy_plane_marker.type = visualization_msgs::Marker::CUBE;
-  xy_plane_marker.color = OmgCore::toColorRGBAMsg({0.8, 0.8, 0.8, 1.0});
+  xy_plane_marker.color = OmgCore::toColorRGBAMsg({1.0, 1.0, 1.0, 1.0});
   xy_plane_marker.scale.x = 100.0;
   xy_plane_marker.scale.y = 100.0;
   xy_plane_marker.scale.z = plane_thickness;

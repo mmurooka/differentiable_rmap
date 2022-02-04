@@ -82,6 +82,14 @@ class RmapTraining: public RmapTrainingBase
     //! K (i.e., number of nearest samples) list for evaluation by k-nearest neighbor
     std::vector<size_t> knn_K_list = {1, 3, 5, 7, 9};
 
+    //! Vertices of foot marker
+    std::vector<Eigen::Vector3d> foot_vertices = {
+      Eigen::Vector3d(-0.1, -0.05, 0.0),
+      Eigen::Vector3d(0.1, -0.05, 0.0),
+      Eigen::Vector3d(0.1, 0.05, 0.0),
+      Eigen::Vector3d(-0.1, 0.05, 0.0)
+    };
+
     /*! \brief Load mc_rtc configuration. */
     inline void load(const mc_rtc::Configuration& mc_rtc_config)
     {
@@ -96,6 +104,7 @@ class RmapTraining: public RmapTrainingBase
       mc_rtc_config("eval_svm_thre_list", eval_svm_thre_list);
       mc_rtc_config("ocnn_dist_ratio_thre_list", ocnn_dist_ratio_thre_list);
       mc_rtc_config("knn_K_list", knn_K_list);
+      mc_rtc_config("foot_vertices", foot_vertices);
     }
   };
 
@@ -320,6 +329,8 @@ class RmapTraining: public RmapTrainingBase
   ros::Publisher sliced_unreachable_cloud_pub_;
   ros::Publisher marker_arr_pub_;
   ros::Publisher grid_map_pub_;
+  ros::Publisher left_poly_arr_pub_;
+  ros::Publisher right_poly_arr_pub_;
   ros::ServiceServer eval_srv_;
 
   std::shared_ptr<SubscVariableManager<std_msgs::Float64, double>> svm_thre_manager_;
