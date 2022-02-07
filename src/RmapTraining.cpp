@@ -2,11 +2,14 @@
 
 #include <chrono>
 #include <functional>
+#include <iomanip>
 
 #include <mc_rtc/constants.h>
 
 #include <sensor_msgs/PointCloud.h>
 #include <visualization_msgs/MarkerArray.h>
+#include <jsk_rviz_plugins/OverlayText.h>
+#include <jsk_recognition_msgs/BoundingBoxArray.h>
 #include <differentiable_rmap/RmapSampleSet.h>
 
 #include <optmotiongen/Utils/RosUtils.h>
@@ -35,6 +38,8 @@ RmapTraining<SamplingSpaceType>::RmapTraining(const std::string& bag_path,
   sliced_unreachable_cloud_pub_ = nh_.advertise<sensor_msgs::PointCloud>("unreachable_cloud_sliced", 1, true);
   marker_arr_pub_ = nh_.advertise<visualization_msgs::MarkerArray>("marker_arr", 1, true);
   grid_map_pub_ = nh_.advertise<grid_map_msgs::GridMap>("grid_map", 1, true);
+  text_pub_ = nh_.advertise<jsk_rviz_plugins::OverlayText>("text", 1, true);
+  bbox_arr_pub_ = nh_.advertise<jsk_recognition_msgs::BoundingBoxArray>("bbox_arr", 1, true);
   eval_srv_ = nh_.advertiseService(
       "evaluate",
       &RmapTraining<SamplingSpaceType>::evaluateCallback,
@@ -677,6 +682,34 @@ void RmapTraining<SamplingSpaceType>::publishMarkerArray() const
   marker_arr_msg.markers.push_back(xy_plane_marker);
 
   marker_arr_pub_.publish(marker_arr_msg);
+
+  {
+    jsk_rviz_plugins::OverlayText text_msg;
+    double origin_z = slice_origin_.translation().z();
+    std::ostringstream origin_z_ss;
+    origin_z_ss << std::fixed << std::setprecision(1) << origin_z;
+    text_msg.text = "z position = " + origin_z_ss.str() + " [m]";
+    text_msg.width = 1000;
+    text_msg.height = 1000;
+    text_msg.top = 10;
+    text_msg.left = 10;
+    text_msg.bg_color.a = 0.0;
+    text_msg.fg_color = OmgCore::toColorRGBAMsg({0.0, 0.0, 0.0, 1.0});
+    text_msg.text_size = 24;
+    text_pub_.publish(text_msg);
+  }
+
+  {
+    jsk_recognition_msgs::BoundingBoxArray bbox_arr_msg;
+    bbox_arr_msg.header = header_msg;
+    jsk_recognition_msgs::BoundingBox bbox_msg;
+    bbox_msg.header = header_msg;
+    double origin_z = slice_origin_.translation().z();
+    bbox_msg.pose = OmgCore::toPoseMsg(sva::PTransformd(Eigen::Vector3d(0.25, 0.3, origin_z)));
+    bbox_msg.dimensions = OmgCore::toVector3Msg({1.5, 1.5, config_.slice_r3_z_thre});
+    bbox_arr_msg.boxes.push_back(bbox_msg);
+    bbox_arr_pub_.publish(bbox_arr_msg);
+  }
 }
 
 template <SamplingSpace SamplingSpaceType>

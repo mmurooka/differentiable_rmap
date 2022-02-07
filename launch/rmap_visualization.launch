@@ -13,6 +13,7 @@
       grid_bag_path: /tmp/rmap_grid_set_$(arg sampling_space).bag
       load_grid: $(arg load_grid)
     </rosparam>
+    <remap from="marker_arr" to="visualization/marker_arr" />
   </node>
 
   <node pkg="rviz" type="rviz" name="$(anon rviz)"
