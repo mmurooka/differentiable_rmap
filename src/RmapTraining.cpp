@@ -2,12 +2,14 @@
 
 #include <chrono>
 #include <functional>
+#include <iomanip>
 
 #include <mc_rtc/constants.h>
 
 #include <sensor_msgs/PointCloud.h>
 #include <visualization_msgs/MarkerArray.h>
 #include <jsk_recognition_msgs/PolygonArray.h>
+#include <jsk_rviz_plugins/OverlayText.h>
 #include <differentiable_rmap/RmapSampleSet.h>
 
 #include <optmotiongen/Utils/RosUtils.h>
@@ -38,6 +40,7 @@ RmapTraining<SamplingSpaceType>::RmapTraining(const std::string& bag_path,
   grid_map_pub_ = nh_.advertise<grid_map_msgs::GridMap>("grid_map", 1, true);
   left_poly_arr_pub_ = nh_.advertise<jsk_recognition_msgs::PolygonArray>("left_poly_arr", 1, true);
   right_poly_arr_pub_ = nh_.advertise<jsk_recognition_msgs::PolygonArray>("right_poly_arr", 1, true);
+  text_pub_ = nh_.advertise<jsk_rviz_plugins::OverlayText>("text", 1, true);
   eval_srv_ = nh_.advertiseService(
       "evaluate",
       &RmapTraining<SamplingSpaceType>::evaluateCallback,
@@ -667,6 +670,22 @@ void RmapTraining<SamplingSpaceType>::publishSlicedCloud() const
     }
     left_poly_arr_pub_.publish(left_poly_arr_msg);
     right_poly_arr_pub_.publish(right_poly_arr_msg);
+  }
+
+  {
+    jsk_rviz_plugins::OverlayText text_msg;
+    double origin_theta = calcYawAngle(slice_origin_.rotation().transpose());
+    std::ostringstream origin_theta_ss;
+    origin_theta_ss << std::fixed << std::setprecision(0) << mc_rtc::constants::toDeg(origin_theta);
+    text_msg.text = "yaw angle = " + origin_theta_ss.str() + " [deg]";
+    text_msg.width = 1000;
+    text_msg.height = 1000;
+    text_msg.top = 10;
+    text_msg.left = 10;
+    text_msg.bg_color.a = 0.0;
+    text_msg.fg_color = OmgCore::toColorRGBAMsg({0.0, 0.0, 0.0, 1.0});
+    text_msg.text_size = 24;
+    text_pub_.publish(text_msg);
   }
 }
 

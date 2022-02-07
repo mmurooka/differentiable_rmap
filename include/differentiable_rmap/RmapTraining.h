@@ -331,6 +331,7 @@ class RmapTraining: public RmapTrainingBase
   ros::Publisher grid_map_pub_;
   ros::Publisher left_poly_arr_pub_;
   ros::Publisher right_poly_arr_pub_;
+  ros::Publisher text_pub_;
   ros::ServiceServer eval_srv_;
 
   std::shared_ptr<SubscVariableManager<std_msgs::Float64, double>> svm_thre_manager_;

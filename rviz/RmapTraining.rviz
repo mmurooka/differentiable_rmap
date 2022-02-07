@@ -3,7 +3,8 @@ Panels:
     Help Height: 110
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /OverlayText1
       Splitter Ratio: 0.6277258396148682
     Tree Height: 725
   - Class: rviz/Selection
@@ -225,6 +226,27 @@ Visualization Manager:
       normal length: 0.10000000149011612
       only border: false
       show normal: true
+    - Align Bottom: false
+      Background Alpha: 0.800000011920929
+      Background Color: 0; 0; 0
+      Class: jsk_rviz_plugin/OverlayText
+      Enabled: true
+      Foreground Alpha: 0.800000011920929
+      Foreground Color: 25; 255; 240
+      Invert Shadow: false
+      Name: OverlayText
+      Overtake BG Color Properties: false
+      Overtake FG Color Properties: false
+      Overtake Position Properties: true
+      Topic: /text
+      Value: true
+      font: DejaVu Sans Mono
+      height: 128
+      left: 502
+      line width: 2
+      text size: 18
+      top: 224
+      width: 1000
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -249,6 +271,7 @@ Visualization Manager:
     - Class: rviz/PublishPoint
       Single click: true
       Topic: /clicked_point
+    - Class: jsk_rviz_plugin/OverlayPicker
   Value: true
   Views:
     Current:
@@ -265,8 +288,8 @@ Visualization Manager:
       Scale: 701.9522094726562
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: -0.007392804138362408
-      Y: -0.02628932148218155
+      X: 0.09050854295492172
+      Y: 0.4709738492965698
     Saved: ~
 Window Geometry:
   Displays:
