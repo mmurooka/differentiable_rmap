@@ -39,7 +39,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -52,7 +52,7 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Check name consistency: false
       Class: optmotiongen_rviz_plugins/RobotStateArray
       Enabled: true
@@ -1254,7 +1254,7 @@ Visualization Manager:
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.019999999552965164
-      Style: Boxes
+      Style: Spheres
       Topic: /reachable_cloud
       Unreliable: false
       Use Fixed Frame: true
@@ -1281,8 +1281,8 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.019999999552965164
-      Style: Boxes
+      Size (m): 0.014999999664723873
+      Style: Spheres
       Topic: /unreachable_cloud
       Unreliable: false
       Use Fixed Frame: true
@@ -1325,25 +1325,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.306612014770508
+      Distance: 4.172653675079346
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.1353117972612381
-        Y: 0.21151314675807953
-        Z: 0.2530706822872162
+        X: 0.29133275151252747
+        Y: 0.49697795510292053
+        Z: 0.14370308816432953
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: -0.15791547298431396
+      Pitch: 0.6670843362808228
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.053188323974609
+      Yaw: 2.483185052871704
     Saved: ~
 Window Geometry:
   Displays:

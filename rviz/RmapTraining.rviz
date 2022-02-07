@@ -193,6 +193,18 @@ Visualization Manager:
       Marker Topic: /marker_arr
       Name: MarkerArray
       Namespaces:
+        foot_reachable_grids_1: true
+        foot_reachable_grids_2: true
+        foot_reachable_grids_3: true
+        foot_reachable_grids_4: true
+        foot_reachable_grids_5: true
+        foot_reachable_grids_6: true
+        foot_reachable_grids_7: true
+        foot_reachable_grids_8: true
+        hand_reachable_grids_1: true
+        hand_reachable_grids_3: true
+        hand_reachable_grids_5: true
+        hand_reachable_grids_7: true
         xy_plane: true
       Queue Size: 100
       Value: true
@@ -225,22 +237,17 @@ Visualization Manager:
         Robot_000:
           Links:
             All Links Enabled: false
-            Body:
+            BODY:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link0:
+            CHEST_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Chest_Link2:
+            CHEST_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
@@ -248,315 +255,231 @@ Visualization Manager:
             Expand Joint Details: false
             Expand Link Details: false
             Expand Tree: false
-            Head_Link0:
+            HEAD_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Head_Link1_Plan2:
+            HEAD_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link0:
+            LARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Larm_Link1:
+            LARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Larm_Link2:
+            LARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Larm_Link3:
+            LARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Larm_Link4:
+            LARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Larm_Link5:
+            LARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Larm_Link6:
+            LARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Lhand_Link0_Plan2:
+            LARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Lindex_Link0:
+            LHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link1:
+              Value: false
+            LHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link2:
+              Value: false
+            LHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
+              Value: false
+            LHAND_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: false
+            LHAND_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: false
+            LLEG_LINK0:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: false
+            LLEG_LINK1:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: false
+            LLEG_LINK2:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: false
+            LLEG_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: false
+            LLEG_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: false
+            LLEG_LINK5:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: false
             Link Tree Style: Links in Alphabetic Order
-            Lleg_Link0:
+            RARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Lleg_Link1:
+            RARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Lleg_Link2:
+            RARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Lleg_Link3:
+            RARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Lleg_Link4:
+            RARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Lleg_Link5:
+            RARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Lmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lscap_Link0:
+            RARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Lthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rarm_Link0:
+            RARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rarm_Link1:
+            RHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rarm_Link2:
+            RHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rarm_Link3:
+            RHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rarm_Link4:
+            RHAND_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rarm_Link5:
+            RHAND_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rarm_Link6:
+            RLEG_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rhand_Link0_Plan2:
+            RLEG_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rindex_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rleg_Link0:
+            RLEG_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rleg_Link1:
+            RLEG_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rleg_Link2:
+            RLEG_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rleg_Link3:
+            RLEG_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: false
-            Rleg_Link4:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: false
-            Rleg_Link5:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: false
-            Rmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rscap_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: false
-            Rthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
             azure_depth_frame:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_hokuyo_frame:
+            door:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_root:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            hokuyo_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            left_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            motor:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_aligned_depth_to_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            right_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            spindle:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
+              Value: false
           Value: true
         Robot_001:
           Links:
             All Links Enabled: true
-            Body:
+            BODY:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link0:
+            CHEST_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Chest_Link2:
+            CHEST_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
@@ -564,315 +487,231 @@ Visualization Manager:
             Expand Joint Details: false
             Expand Link Details: false
             Expand Tree: false
-            Head_Link0:
+            HEAD_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Head_Link1_Plan2:
+            HEAD_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link0:
+            LARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link1:
+            LARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link2:
+            LARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link3:
+            LARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link4:
+            LARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link5:
+            LARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link6:
+            LARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lhand_Link0_Plan2:
+            LARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lindex_Link0:
+            LHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link1:
+              Value: true
+            LHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link2:
+              Value: true
+            LHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
+              Value: true
+            LHAND_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LHAND_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK0:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK1:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK2:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK5:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
             Link Tree Style: Links in Alphabetic Order
-            Lleg_Link0:
+            RARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link1:
+            RARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link2:
+            RARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link3:
+            RARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link4:
+            RARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link5:
+            RARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lscap_Link0:
+            RARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rarm_Link0:
+            RARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link1:
+            RHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link2:
+            RHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link3:
+            RHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link4:
+            RHAND_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link5:
+            RHAND_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link6:
+            RLEG_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rhand_Link0_Plan2:
+            RLEG_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rindex_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rleg_Link0:
+            RLEG_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link1:
+            RLEG_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link2:
+            RLEG_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link3:
+            RLEG_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link4:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rleg_Link5:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rscap_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
             azure_depth_frame:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_hokuyo_frame:
+            door:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_root:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            hokuyo_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            left_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            motor:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_aligned_depth_to_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            right_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            spindle:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
+              Value: true
           Value: true
         Robot_002:
           Links:
             All Links Enabled: true
-            Body:
+            BODY:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link0:
+            CHEST_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Chest_Link2:
+            CHEST_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
@@ -880,315 +719,231 @@ Visualization Manager:
             Expand Joint Details: false
             Expand Link Details: false
             Expand Tree: false
-            Head_Link0:
+            HEAD_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Head_Link1_Plan2:
+            HEAD_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link0:
+            LARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link1:
+            LARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link2:
+            LARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link3:
+            LARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link4:
+            LARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link5:
+            LARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link6:
+            LARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lhand_Link0_Plan2:
+            LARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lindex_Link0:
+            LHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link1:
+              Value: true
+            LHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link2:
+              Value: true
+            LHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
+              Value: true
+            LHAND_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LHAND_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK0:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK1:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK2:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK5:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
             Link Tree Style: Links in Alphabetic Order
-            Lleg_Link0:
+            RARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link1:
+            RARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link2:
+            RARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link3:
+            RARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link4:
+            RARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link5:
+            RARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lscap_Link0:
+            RARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rarm_Link0:
+            RARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link1:
+            RHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link2:
+            RHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link3:
+            RHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link4:
+            RHAND_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link5:
+            RHAND_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link6:
+            RLEG_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rhand_Link0_Plan2:
+            RLEG_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rindex_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rleg_Link0:
+            RLEG_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link1:
+            RLEG_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link2:
+            RLEG_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link3:
+            RLEG_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link4:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rleg_Link5:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rscap_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
             azure_depth_frame:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_hokuyo_frame:
+            door:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_root:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            hokuyo_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            left_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            motor:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_aligned_depth_to_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            right_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            spindle:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
+              Value: true
           Value: true
         Robot_003:
           Links:
             All Links Enabled: true
-            Body:
+            BODY:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link0:
+            CHEST_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Chest_Link2:
+            CHEST_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
@@ -1196,315 +951,231 @@ Visualization Manager:
             Expand Joint Details: false
             Expand Link Details: false
             Expand Tree: false
-            Head_Link0:
+            HEAD_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Head_Link1_Plan2:
+            HEAD_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link0:
+            LARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link1:
+            LARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link2:
+            LARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link3:
+            LARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link4:
+            LARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link5:
+            LARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link6:
+            LARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lhand_Link0_Plan2:
+            LARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lindex_Link0:
+            LHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link1:
+              Value: true
+            LHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link2:
+              Value: true
+            LHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
+              Value: true
+            LHAND_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LHAND_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK0:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK1:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK2:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK5:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
             Link Tree Style: Links in Alphabetic Order
-            Lleg_Link0:
+            RARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link1:
+            RARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link2:
+            RARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link3:
+            RARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link4:
+            RARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link5:
+            RARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lscap_Link0:
+            RARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rarm_Link0:
+            RARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link1:
+            RHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link2:
+            RHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link3:
+            RHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link4:
+            RHAND_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link5:
+            RHAND_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link6:
+            RLEG_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rhand_Link0_Plan2:
+            RLEG_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rindex_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rleg_Link0:
+            RLEG_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link1:
+            RLEG_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link2:
+            RLEG_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link3:
+            RLEG_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link4:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rleg_Link5:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rscap_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
             azure_depth_frame:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_hokuyo_frame:
+            door:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_root:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            hokuyo_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            left_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            motor:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_aligned_depth_to_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            right_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            spindle:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
+              Value: true
           Value: true
         Robot_004:
           Links:
             All Links Enabled: true
-            Body:
+            BODY:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link0:
+            CHEST_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Chest_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Chest_Link2:
+            CHEST_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
@@ -1512,295 +1183,216 @@ Visualization Manager:
             Expand Joint Details: false
             Expand Link Details: false
             Expand Tree: false
-            Head_Link0:
+            HEAD_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Head_Link1_Plan2:
+            HEAD_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link0:
+            LARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link1:
+            LARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link2:
+            LARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link3:
+            LARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link4:
+            LARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link5:
+            LARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Larm_Link6:
+            LARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lhand_Link0_Plan2:
+            LARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lindex_Link0:
+            LHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link1:
+              Value: true
+            LHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            Lindex_Link2:
+              Value: true
+            LHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
+              Value: true
+            LHAND_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LHAND_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK0:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK1:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK2:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK3:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK4:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            LLEG_LINK5:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
             Link Tree Style: Links in Alphabetic Order
-            Lleg_Link0:
+            RARM_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link1:
+            RARM_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link2:
+            RARM_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link3:
+            RARM_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link4:
+            RARM_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lleg_Link5:
+            RARM_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lscap_Link0:
+            RARM_LINK6:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Lthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Lthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rarm_Link0:
+            RARM_LINK7:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link1:
+            RHAND_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link2:
+            RHAND_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link3:
+            RHAND_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link4:
+            RHAND_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link5:
+            RHAND_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rarm_Link6:
+            RLEG_LINK0:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rhand_Link0_Plan2:
+            RLEG_LINK1:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rindex_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rindex_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rleg_Link0:
+            RLEG_LINK2:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link1:
+            RLEG_LINK3:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link2:
+            RLEG_LINK4:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link3:
+            RLEG_LINK5:
               Alpha: 1
               Show Axes: false
               Show Trail: false
               Value: true
-            Rleg_Link4:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rleg_Link5:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rmiddle_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rmiddle_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rscap_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            Rthumb_Link0:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link1:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            Rthumb_Link2:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
             azure_depth_frame:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_hokuyo_frame:
+            door:
               Alpha: 1
               Show Axes: false
               Show Trail: false
-            head_root:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            hokuyo_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            left_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            motor:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_aligned_depth_to_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_color_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_depth_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            realsense_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            right_camera_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            spindle:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
+              Value: true
           Value: true
       Value: true
   Enabled: true

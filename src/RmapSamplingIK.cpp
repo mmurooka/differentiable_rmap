@@ -199,10 +199,12 @@ bool RmapSamplingIK<SamplingSpaceType>::sampleOnce(int sample_idx)
   const SampleType& sample = poseToSample<SamplingSpaceType>(body_task_->target());
   sample_list_[sample_idx] = sample;
   reachability_list_[sample_idx] = reachability;
+  auto point_msg = OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample));
+  point_msg.z = 0;
   if (reachability) {
-    reachable_cloud_msg_.points.push_back(OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample)));
+    reachable_cloud_msg_.points.push_back(point_msg);
   } else {
-    unreachable_cloud_msg_.points.push_back(OmgCore::toPoint32Msg(sampleToCloudPos<SamplingSpaceType>(sample)));
+    unreachable_cloud_msg_.points.push_back(point_msg);
   }
 
   return true;
