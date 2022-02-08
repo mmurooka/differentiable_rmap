@@ -164,6 +164,9 @@ class RmapTraining: public RmapTrainingBase
                         const PredictOnceFuncType& predict_once_func,
                         const PredictSetupFuncType& predict_setup_func = nullptr);
 
+  /** \brief Evaluate accuracy analytically */
+  void evaluateAccuracyAnalytical() const;
+
   /** \brief Test SVM value calculation.
       \param[out] svm_value_libsvm SVM value calculated by libsvm
       \param[out] svm_value_eigen  SVM value calculated by Eigen

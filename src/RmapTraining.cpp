@@ -1,5 +1,6 @@
 /* Author: Masaki Murooka */
 
+#include <fstream>
 #include <chrono>
 #include <functional>
 
@@ -238,6 +239,85 @@ void RmapTraining<SamplingSpaceType>::evaluateAccuracy(
     ROS_INFO_STREAM("  - " << std::to_string(result) << ": " << predict_result_table.at(result));
   }
   ROS_INFO_STREAM("Predict duration: " << duration << " [ms] (predict-one: " << duration / sample_num <<" [ms])");
+}
+
+template <SamplingSpace SamplingSpaceType>
+void RmapTraining<SamplingSpaceType>::evaluateAccuracyAnalytical() const
+{
+  if constexpr (SamplingSpaceType == SamplingSpace::R2) {
+      int grid_num = grid_map_->getSize()[0] * grid_map_->getSize()[1];
+      Eigen::Matrix<bool, Eigen::Dynamic, 1> reachability_gt_list;
+      Eigen::VectorXd svm_value_list;
+      reachability_gt_list.resize(grid_num);
+      svm_value_list.resize(grid_num);
+
+      size_t grid_idx = 0;
+      for (grid_map::GridMapIterator it(*grid_map_); !it.isPastEnd(); ++it) {
+        grid_map::Position pos;
+        grid_map_->getPosition(*it, pos);
+
+        reachability_gt_list[grid_idx] =
+            (pos.x() >= 0 &&
+             pos.y() >= 0 &&
+             0.5 <= pos.norm() &&
+             pos.norm() <= 1.5 &&
+             0.5 <= (pos - Eigen::Vector2d(1.0, 0.0)).norm()) ||
+            (pos - Eigen::Vector2d(0.0, 1.0)).norm() <= 0.5;
+        svm_value_list[grid_idx] = calcSVMValue(pos);
+
+        grid_idx++;
+      }
+
+      std::ofstream ofs_iou("/tmp/rmap_train_analytical_iou.txt");
+      std::ofstream ofs_roc("/tmp/rmap_train_analytical_roc.txt");
+      for (double svm_thre : config_.eval_svm_thre_list) {
+        std::unordered_map<PredictResult, size_t> predict_result_table;
+        for (const auto& result : PredictResults::all) {
+          predict_result_table.emplace(result, 0);
+        }
+
+        for (int i = 0; i < grid_num; i++) {
+          if (svm_value_list[i] >= svm_thre) {
+            if (reachability_gt_list[i]) {
+              predict_result_table.at(PredictResult::TrueReachable)++;
+            } else {
+              predict_result_table.at(PredictResult::FalseReachable)++;
+            }
+          } else {
+            if (reachability_gt_list[i]) {
+              predict_result_table.at(PredictResult::FalseUnreachable)++;
+            } else {
+              predict_result_table.at(PredictResult::TrueUnreachable)++;
+            }
+          }
+        }
+
+        double iou = static_cast<double>(predict_result_table.at(PredictResult::TrueReachable)) / (
+            predict_result_table.at(PredictResult::TrueReachable) +
+            predict_result_table.at(PredictResult::FalseReachable) +
+            predict_result_table.at(PredictResult::FalseUnreachable));
+        double accuracy = static_cast<double>(
+            predict_result_table.at(PredictResult::TrueReachable) +
+            predict_result_table.at(PredictResult::TrueUnreachable)) / (
+                predict_result_table.at(PredictResult::TrueReachable) +
+                predict_result_table.at(PredictResult::TrueUnreachable) +
+                predict_result_table.at(PredictResult::FalseReachable) +
+                predict_result_table.at(PredictResult::FalseUnreachable));
+        double tpr = static_cast<double>(predict_result_table.at(PredictResult::TrueReachable)) / (
+            predict_result_table.at(PredictResult::TrueReachable) +
+            predict_result_table.at(PredictResult::FalseUnreachable));
+        double fpr = static_cast<double>(predict_result_table.at(PredictResult::FalseReachable)) / (
+            predict_result_table.at(PredictResult::FalseReachable) +
+            predict_result_table.at(PredictResult::TrueUnreachable));
+
+        ROS_INFO_STREAM("- svm_thre: " << svm_thre << ", IoU: " << iou);
+        for (const auto& result : PredictResults::all) {
+          ROS_INFO_STREAM("  - " << std::to_string(result) << ": " << predict_result_table.at(result));
+        }
+        ofs_iou << svm_thre << " " << iou << " " << accuracy << std::endl;
+        ofs_roc << fpr << " " << tpr << std::endl;
+      }
+    }
 }
 
 template <SamplingSpace SamplingSpaceType>
@@ -689,6 +769,11 @@ bool RmapTraining<SamplingSpaceType>::evaluateCallback(
     std_srvs::Empty::Request& req,
     std_srvs::Empty::Response& res)
 {
+  if constexpr (SamplingSpaceType == SamplingSpace::R2) {
+      evaluateAccuracyAnalytical();
+      return true;
+    }
+
   ROS_INFO("==== SVM ====");
   for (double svm_thre : config_.eval_svm_thre_list) {
     ROS_INFO_STREAM("- svm_thre: " << svm_thre);
