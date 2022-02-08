@@ -1,11 +1,11 @@
 # Margin ratio of grid map
-grid_map_margin_ratio: 0.25
+grid_map_margin_ratio: 0.5
 
 # Resolution of grid map [m]
 grid_map_resolution: 0.02
 
 # Height scale of grid map
-grid_map_height_scale: 1.0
+grid_map_height_scale: 0.02
 
 # Theta threshold for slicing SE2 sample [deg]
 slice_se2_theta_thre: 2.5

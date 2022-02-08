@@ -675,6 +675,13 @@ void RmapTraining<SamplingSpaceType>::publishMarkerArray() const
   marker_arr_msg.markers.push_back(xy_plane_marker);
 
   marker_arr_pub_.publish(marker_arr_msg);
+
+  {
+    grid_map_->setTimestamp(ros::Time::now().toNSec());
+    grid_map_msgs::GridMap grid_map_msg;
+    grid_map::GridMapRosConverter::toMessage(*grid_map_, grid_map_msg);
+    grid_map_pub_.publish(grid_map_msg);
+  }
 }
 
 template <SamplingSpace SamplingSpaceType>
