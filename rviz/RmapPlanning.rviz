@@ -37,7 +37,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -50,14 +50,14 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Alpha: 0.5
       Autocompute Intensity Bounds: true
       Class: grid_map_rviz_plugin/GridMap
       Color: 200; 200; 200
       Color Layer: svm_value
       Color Transformer: IntensityLayer
-      Enabled: true
+      Enabled: false
       Height Layer: svm_value
       Height Transformer: Layer
       History Length: 1
@@ -71,7 +71,7 @@ Visualization Manager:
       Topic: /grid_map
       Unreliable: false
       Use Rainbow: true
-      Value: true
+      Value: false
     - Class: rviz/MarkerArray
       Enabled: true
       Marker Topic: /marker_arr
@@ -92,7 +92,7 @@ Visualization Manager:
       Value: true
     - Alpha: 1
       Class: rviz/PointStamped
-      Color: 237; 212; 0
+      Color: 52; 101; 164
       Enabled: true
       History Length: 1
       Name: CurrentPoint
@@ -105,7 +105,7 @@ Visualization Manager:
       Axes Radius: 0.019999999552965164
       Class: rviz/Pose
       Color: 255; 25; 0
-      Enabled: true
+      Enabled: false
       Head Length: 0.30000001192092896
       Head Radius: 0.10000000149011612
       Name: CurrentPose
@@ -114,7 +114,7 @@ Visualization Manager:
       Shape: Axes
       Topic: /current_pose
       Unreliable: false
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -142,26 +142,21 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: rviz/Orbit
-      Distance: 5.170768737792969
+      Angle: 0
+      Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
-      Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
-      Focal Shape Fixed Size: false
-      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.33539822697639465
+      Scale: 315.26873779296875
       Target Frame: <Fixed Frame>
-      Value: Orbit (rviz)
-      Yaw: 4.213578224182129
+      Value: TopDownOrtho (rviz)
+      X: 0.5772326588630676
+      Y: 0.7188753485679626
     Saved: ~
 Window Geometry:
   Displays:
