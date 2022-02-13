@@ -25,7 +25,7 @@
 
     <rosparam subst_value="true" if="$(eval arg('sampling_space') == 'R2')">
       body_name: tool0
-      joint_name_list: [shoulder_lift_joint, elbow_joint]
+      joint_name_list: [shoulder_lift_joint, elbow_joint, wrist_1_joint]
       sample_num: 10000
       sleep_rate: 2000
     </rosparam>

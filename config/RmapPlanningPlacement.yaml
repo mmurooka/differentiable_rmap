@@ -5,7 +5,7 @@ reaching_num: 10
 target_traj_radius: 0.5
 
 # Angle of target trajectory [deg]
-target_traj_angle: 90
+target_traj_angle: 180
 
 # Regularization weight
 reg_weight: 1e-6
