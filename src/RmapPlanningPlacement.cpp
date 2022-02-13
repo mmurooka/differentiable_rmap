@@ -297,7 +297,10 @@ void RmapPlanningPlacement<SamplingSpaceType>::publishMarkerArray() const
         calcGridCubeScale<SamplingSpaceType>(grid_set_msg_->divide_nums, sample_max_ - sample_min_));
     grids_marker.color = OmgCore::toColorRGBAMsg({0.8, 0.0, 0.0, 0.3});
 
-    for (int i = 0; i < config_.reaching_num; i++) {
+    {
+      // Publish only the first rmap
+      int i = 0;
+
       grids_marker.ns = "reachable_grids_" + std::to_string(i);
       grids_marker.id = marker_arr_msg.markers.size();
       grids_marker.pose = OmgCore::toPoseMsg(
@@ -331,6 +334,74 @@ void RmapPlanningPlacement<SamplingSpaceType>::publishMarkerArray() const
       marker_arr_msg.markers.push_back(grids_marker);
     }
   }
+
+  // Current reaching points
+  visualization_msgs::Marker current_reaching_marker;
+  current_reaching_marker.header = header_msg;
+  current_reaching_marker.ns = "current_reaching_points";
+  current_reaching_marker.id = marker_arr_msg.markers.size();
+  current_reaching_marker.type = visualization_msgs::Marker::SPHERE_LIST;
+  current_reaching_marker.pose = OmgCore::toPoseMsg(sva::PTransformd::Identity());
+  if (SamplingSpaceType == SamplingSpace::R2 || SamplingSpaceType == SamplingSpace::SE2) {
+    current_reaching_marker.pose.position.z = 10.0;
+  }
+  current_reaching_marker.scale = OmgCore::toVector3Msg({0.05, 0.05, 0.05});
+  current_reaching_marker.color = OmgCore::toColorRGBAMsg({0.0, 0.0, 0.8, 1.0});
+  current_reaching_marker.points.resize(config_.reaching_num);
+  for (int i = 0; i < config_.reaching_num; i++) {
+    current_reaching_marker.points[i] = OmgCore::toPointMsg(
+        sampleToPose<SamplingSpaceType>(current_reaching_sample_list_[i]).translation());
+  }
+  marker_arr_msg.markers.push_back(current_reaching_marker);
+
+  // Target reaching points
+  visualization_msgs::Marker target_reaching_marker;
+  target_reaching_marker.header = header_msg;
+  target_reaching_marker.ns = "target_reaching_points";
+  target_reaching_marker.id = marker_arr_msg.markers.size();
+  target_reaching_marker.type = visualization_msgs::Marker::LINE_STRIP;
+  target_reaching_marker.pose = OmgCore::toPoseMsg(sva::PTransformd::Identity());
+  if (SamplingSpaceType == SamplingSpace::R2 || SamplingSpaceType == SamplingSpace::SE2) {
+    target_reaching_marker.pose.position.z = 9.0;
+  }
+  target_reaching_marker.scale.x = 0.02;
+  target_reaching_marker.color = OmgCore::toColorRGBAMsg({0.0, 0.8, 0.0, 1.0});
+  target_reaching_marker.points.resize(config_.reaching_num);
+  for (int i = 0; i < config_.reaching_num; i++) {
+    target_reaching_marker.points[i] = OmgCore::toPointMsg(
+        sampleToPose<SamplingSpaceType>(target_reaching_sample_list_[i]).translation());
+  }
+  marker_arr_msg.markers.push_back(target_reaching_marker);
+
+  // Current placement cube
+  visualization_msgs::Marker current_placement_marker;
+  current_placement_marker.header = header_msg;
+  current_placement_marker.ns = "current_placement_cube";
+  current_placement_marker.id = marker_arr_msg.markers.size();
+  current_placement_marker.type = visualization_msgs::Marker::CUBE;
+  current_placement_marker.pose = OmgCore::toPoseMsg(
+      sampleToPose<PlacementSamplingSpaceType>(current_placement_sample_));
+  if (SamplingSpaceType == SamplingSpace::R2 || SamplingSpaceType == SamplingSpace::SE2) {
+    current_placement_marker.pose.position.z = 10.0;
+  }
+  current_placement_marker.scale = OmgCore::toVector3Msg({0.08, 0.08, 0.08});
+  current_placement_marker.color = OmgCore::toColorRGBAMsg({0.0, 0.0, 0.8, 1.0});
+  marker_arr_msg.markers.push_back(current_placement_marker);
+
+  // Target placement cube
+  visualization_msgs::Marker target_placement_marker;
+  target_placement_marker.header = header_msg;
+  target_placement_marker.ns = "target_placement_cube";
+  target_placement_marker.id = marker_arr_msg.markers.size();
+  target_placement_marker.type = visualization_msgs::Marker::CUBE;
+  target_placement_marker.pose = OmgCore::toPoseMsg(
+      sampleToPose<PlacementSamplingSpaceType>(target_placement_sample_));
+  if (SamplingSpaceType == SamplingSpace::R2 || SamplingSpaceType == SamplingSpace::SE2) {
+    target_placement_marker.pose.position.z = 5.0;
+  }
+  target_placement_marker.scale = OmgCore::toVector3Msg({0.12, 0.12, 0.12});
+  target_placement_marker.color = OmgCore::toColorRGBAMsg({0.0, 0.8, 0.0, 0.5});
+  marker_arr_msg.markers.push_back(target_placement_marker);
 
   marker_arr_pub_.publish(marker_arr_msg);
 }

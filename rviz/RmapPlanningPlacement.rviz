@@ -4,6 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /MarkerArray1
         - /MarkerArray1/Namespaces1
         - /RobotStateArray1/Robot Color Style1
         - /RobotStateArray1/Robot Color Style1/Color1
@@ -40,7 +41,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -53,14 +54,14 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Class: rviz/Axes
-      Enabled: true
+      Enabled: false
       Length: 0.05000000074505806
       Name: Axes
       Radius: 0.05999999865889549
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Alpha: 0.5
       Autocompute Intensity Bounds: true
       Class: grid_map_rviz_plugin/GridMap
@@ -87,16 +88,11 @@ Visualization Manager:
       Marker Topic: /marker_arr
       Name: MarkerArray
       Namespaces:
+        current_placement_cube: true
+        current_reaching_points: true
         reachable_grids_0: true
-        reachable_grids_1: true
-        reachable_grids_2: true
-        reachable_grids_3: true
-        reachable_grids_4: true
-        reachable_grids_5: true
-        reachable_grids_6: true
-        reachable_grids_7: true
-        reachable_grids_8: true
-        reachable_grids_9: true
+        target_placement_cube: true
+        target_reaching_points: true
       Queue Size: 100
       Value: true
     - Class: rviz/InteractiveMarkers
@@ -113,7 +109,7 @@ Visualization Manager:
       Axes Radius: 0.03999999910593033
       Class: rviz/Pose
       Color: 255; 25; 0
-      Enabled: true
+      Enabled: false
       Head Length: 0.30000001192092896
       Head Radius: 0.10000000149011612
       Name: PlacementPose
@@ -122,14 +118,14 @@ Visualization Manager:
       Shape: Axes
       Topic: /current_pose
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 1
       Arrow Length: 0.30000001192092896
       Axes Length: 0.10000000149011612
       Axes Radius: 0.02500000037252903
       Class: rviz/PoseArray
       Color: 255; 25; 0
-      Enabled: true
+      Enabled: false
       Head Length: 0.07000000029802322
       Head Radius: 0.029999999329447746
       Name: ReachingPoseArray
@@ -138,11 +134,11 @@ Visualization Manager:
       Shape: Axes
       Topic: /current_pose_arr
       Unreliable: false
-      Value: true
+      Value: false
     - Check name consistency: false
       Class: optmotiongen_rviz_plugins/RobotStateArray
       Enabled: true
-      Max Robot Num: 10
+      Max Robot Num: 12
       Name: RobotStateArray
       Robot Color Style:
         Color:
@@ -747,6 +743,124 @@ Visualization Manager:
               Show Trail: false
               Value: true
           Value: true
+        Robot_010:
+          Links:
+            All Links Enabled: true
+            Expand Joint Details: false
+            Expand Link Details: false
+            Expand Tree: false
+            Link Tree Style: Links in Alphabetic Order
+            base:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            base_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            ee_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            forearm_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            shoulder_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            tool0:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            upper_arm_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            world:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            wrist_1_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            wrist_2_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            wrist_3_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+          Value: true
+        Robot_011:
+          Links:
+            All Links Enabled: true
+            Expand Joint Details: false
+            Expand Link Details: false
+            Expand Tree: false
+            Link Tree Style: Links in Alphabetic Order
+            base:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            base_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            ee_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            forearm_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            shoulder_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            tool0:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            upper_arm_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            world:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            wrist_1_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            wrist_2_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            wrist_3_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+          Value: true
       Value: true
   Enabled: true
   Global Options:
@@ -775,7 +889,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0
+      Angle: 0.004999999888241291
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -785,11 +899,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 266.35565185546875
+      Scale: 209.0107421875
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 0.8641910552978516
-      Y: 0.21877408027648926
+      X: 0.32637691497802734
+      Y: 0.16864925622940063
     Saved: ~
 Window Geometry:
   Displays:

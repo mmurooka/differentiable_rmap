@@ -25,18 +25,22 @@
 
   <node pkg="optmotiongen" type="InteractiveMarkerManager.py" name="rviz_server"
         clear_params="true">
-    <rosparam>
+    <rosparam subst_value="true" if="$(eval arg('sampling_space') == 'R2')">
       enable_initial_publish: true
       interactive_markers:
         - name: target
           initial_pose:
-            pos: [1.0, 0.0, 1.0]
-          axis_controls: []
-          markers:
-            - type: 2 # SPHERE
-              scale: [0.1, 0.1, 0.1]
-              color: [0.0, 1.0, 0.0, 1.0]
-              interaction_mode: 9 # MOVE_ROTATE_3D
+            pos: [0, 0, 0.1]
+          axis_controls: [tx, ty, rz]
+    </rosparam>
+
+    <rosparam subst_value="true" unless="$(eval arg('sampling_space') == 'R2')">
+      enable_initial_publish: true
+      interactive_markers:
+        - name: target
+          initial_pose:
+            pos: [0, 0, 0]
+          axis_controls: [tx, ty, tz, rx, ry, rz]
     </rosparam>
   </node>
 
